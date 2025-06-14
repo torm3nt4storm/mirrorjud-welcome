@@ -1,4 +1,3 @@
-
 import express from "express";
 import bodyParser from "body-parser";
 import fetch from "node-fetch";
@@ -24,18 +23,18 @@ app.post("/welcome", async (req, res) => {
         <p>Estamos felizes por você estar aqui. Este é o primeiro passo para transformar sua experiência com gestão jurídica.</p>
         <p>Para ativar sua conta, basta clicar no botão abaixo:</p>
         <p style="text-align: center;">
-          <a href="\${confirmation_link}" style="padding: 10px 20px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 5px;">Confirmar Conta</a>
+          <a href="${confirmation_link}" style="padding: 10px 20px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 5px;">Confirmar Conta</a>
         </p>
         <p>Se você não solicitou esse cadastro, apenas ignore este e-mail.</p>
         <hr />
         <p style="font-size: 12px; color: #888;">MirrorJud - Sistema de Gestão Jurídica</p>
       </div>
-    \`;
+    `;
 
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "Authorization": \`Bearer \${process.env.RESEND_API_KEY}\`,
+        "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
