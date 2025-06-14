@@ -16,7 +16,7 @@ app.post("/welcome", async (req, res) => {
       return res.status(400).json({ error: "Missing email or confirmation_link" });
     }
 
-    const htmlContent = \`
+    const htmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
         <img src="https://mirrorjud.com/logo.png" alt="MirrorJud Logo" style="max-width: 150px; margin-bottom: 20px;" />
         <h2 style="color: #2b2d42;">Bem-vindo ao MirrorJud!</h2>
